@@ -20,14 +20,14 @@ def get_pair_numbers_controller(
     list_: List[int],
 ):
     """
-    Get a list of numbers and a sum, return all pairs of numbers that sum up to the sum
+    Get a list of numbers and a sum, return the first pair of numbers that sum up to the sum, if there is no pair, return None
 
     Args:
-        sum_: the sum of the pair of numbers
-        list_: the list of numbers to search in
+        * sum_: the sum of the pair of numbers
+        * list_: the list of numbers to search in
 
     Returns:
-        A list of pairs of numbers
+        A list of pairs of numbers or None
     """
     len_list = len(list_)
     response_list = prepare_list(list_, len_list, sum_)
@@ -36,6 +36,17 @@ def get_pair_numbers_controller(
 
 # service
 def prepare_list(list_parameter, len_list, int_parameter):
+    """
+    Find if its possible return a list with a pair of numbers or None
+
+    Args:
+        list_parameter (_type_): A list of numbers
+        len_list (_type_): The length of the list
+        int_parameter (_type_): A number to compare with the list
+
+    Returns:
+        A list of pairs of numbers or None
+    """
     unordered_map = {}
     response_list = []
     for i in range(len_list):
