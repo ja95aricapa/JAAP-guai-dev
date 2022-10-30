@@ -2,10 +2,9 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import APIRouter, status
-from typing import Union, List
+from typing import List
 
 # router
-
 router = APIRouter(
     tags=["Numbers"],
 )
@@ -34,8 +33,8 @@ def get_pair_numbers_controller(
     response_list = prepare_list(list_, len_list, sum_)
     return response_list
 
-# service
 
+# service
 def prepare_list(list_parameter, len_list, int_parameter):
     unordered_map = {}
     response_list = []
@@ -66,7 +65,6 @@ def prepare_list(list_parameter, len_list, int_parameter):
     return response_list[0]
 
 # Create the app
-
 app = FastAPI(
     title="Pair Of Numbers API",
     description="API for pair a list of numbers",
